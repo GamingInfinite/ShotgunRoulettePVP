@@ -57,11 +57,23 @@ class Handcuffs extends Item {
   }
 }
 
+class Beer extends Item {
+  constructor() {
+    super("🍺");
+  }
+
+  public effect(gameState: GameState): GameState {
+    gameState.racked.splice(0, 1);
+    return gameState;
+  }
+}
+
 const Items = [
   new Cigarette(),
   new Saw(),
   new MagnifyingGlass(),
   new Handcuffs(),
+  new Beer(),
 ];
 
 export default Items;
